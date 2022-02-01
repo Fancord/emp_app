@@ -1,0 +1,31 @@
+{% extends "base_template.html" %}
+
+{% block title %} {{ employee.fio }} {% endblock %}
+
+{% block content %}
+<h1>Профиль сотрудника</h1>
+
+<div class="container" >
+    <div class="row mb-3" id="emp_card">
+        <div class="col-md-1 themed-grid-col">ФИО</div>
+        <div class="col-md-4 themed-grid-col">{{ employee.fio }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 themed-grid-col">Должность</div>
+        <div class="col-md-4 themed-grid-col">{{ employee.position }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 themed-grid-col">Отдел</div>
+        <div class="col-md-4 themed-grid-col">{{ employee.department }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 themed-grid-col">Начал работать</div>
+        <div class="col-md-4 themed-grid-col">{{ employee.first_day }}</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 themed-grid-col">Лет работает</div>
+        <div class="col-md-4 themed-grid-col">{{ employee.worked_time }}</div>
+    </div>
+</div>
+
+{% endblock %}

@@ -79,7 +79,7 @@ db.sqlite3-journal
 *.pyc
 __pycache__
 media
-static
+org_structure/static
 
 # Flask stuff:
 instance/

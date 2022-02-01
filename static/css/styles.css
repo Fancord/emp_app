@@ -1,0 +1,9 @@
+.row > * {
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+
+#emp_card {
+    margin-top: 20px;
+}
