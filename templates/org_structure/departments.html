@@ -1,0 +1,35 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<h1>Справочник отделов</h1>
+<a class="btn btn-primary btn-lg" role="button" href="{% url 'department_add' %}">Создание отдела</a>
+<div style="margin-top:15px;" class="accordion" id="accordionPanelsStayOpenExample">
+  {% for department in department_list %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-heading{{ department.slug }}">
+      <button class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapse{{ department.slug }}"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapse{{ department.slug }}">
+        {{ department.name }}
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapse{{ department.slug }}"
+         class="accordion-collapse collapse"
+         aria-labelledby="panelsStayOpen-heading{{ department.slug }}">
+      <div class="accordion-body">
+          {{ department.description }}
+        <div class="d-grid gap-1 d-md-flex justify-content-md-end">
+          <a class="btn btn-primary btn-sm me-md-2"
+             role="button" href="{% url 'department_update' department.pk %}">Изменить</a>
+          <a class="btn btn-danger btn-sm" role="button"
+             href="{% url 'department_delete' department.pk %}">Удалить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

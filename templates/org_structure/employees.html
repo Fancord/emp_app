@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>Список сотрудников</h1>
-<a href="{% url 'add_employee' %}">Создание сотрудника</a>
+<a class="btn btn-primary btn-lg" role="button" href="{% url 'employee_add' %}">Создание сотрудника</a>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -18,7 +18,7 @@
     <tbody>
         {% for employee in employee_list %}
                 <tr>
-                    <th scope="row"><a href="{% url 'employees_detail' employee.fio %}">{{ employee.fio }}</a></th>
+                    <th scope="row"><a class="btn btn-outline-info" role="button" href="{% url 'employee_detail' employee.fio %}">{{ employee.fio }}</a></th>
                     <td>{{ employee.position }}</td>
                     <td>{{ employee.department }}</td>
                     <td>{{ employee.first_day }}</td>

@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<h1>Справочник должностей</h1>
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  {% for position in position_list %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-heading{{ position.slug }}">
+      <button class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapse{{ position.slug }}"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapse{{ position.slug }}">
+        {{ position.name }}
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapse{{ position.slug }}"
+         class="accordion-collapse collapse"
+         aria-labelledby="panelsStayOpen-heading{{ position.slug }}">
+      <div class="accordion-body">
+          {{ position.description }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

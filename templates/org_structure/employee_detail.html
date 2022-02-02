@@ -7,25 +7,30 @@
 
 <div class="container" >
     <div class="row mb-3" id="emp_card">
-        <div class="col-md-1 themed-grid-col">ФИО</div>
+        <div class="col-md-2 themed-grid-col">ФИО</div>
         <div class="col-md-4 themed-grid-col">{{ employee.fio }}</div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-1 themed-grid-col">Должность</div>
+        <div class="col-md-2 themed-grid-col">Должность</div>
         <div class="col-md-4 themed-grid-col">{{ employee.position }}</div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-1 themed-grid-col">Отдел</div>
+        <div class="col-md-2 themed-grid-col">Отдел</div>
         <div class="col-md-4 themed-grid-col">{{ employee.department }}</div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-1 themed-grid-col">Начал работать</div>
+        <div class="col-md-2 themed-grid-col">Начал работать</div>
         <div class="col-md-4 themed-grid-col">{{ employee.first_day }}</div>
     </div>
     <div class="row mb-3">
-        <div class="col-md-1 themed-grid-col">Лет работает</div>
+        <div class="col-md-2 themed-grid-col">Лет работает</div>
         <div class="col-md-4 themed-grid-col">{{ employee.worked_time }}</div>
     </div>
+    <div class="d-grid gap-2 col-3">
+        <a class="btn btn-primary btn-lg" role="button" href="{% url 'employee_update' employee.pk %}">Изменение данных сотрудника</a>
+        <a class="btn btn-danger btn-lg" role="button" href="{% url 'employee_delete' employee.pk %}">Удаление сотрудника</a>
+    </div>
 </div>
+
 
 {% endblock %}
